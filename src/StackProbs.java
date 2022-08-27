@@ -27,9 +27,33 @@ public class StackProbs {
             else
                 positive.push(stack.pop());
         }
-        while(!positive.isEmpty()){
+        while (!positive.isEmpty()) {
             negative.push(positive.pop());
         }
-    return negative;
+        return negative;
+    }
+
+    public Stack<Integer> shiftByN(Stack<Integer> stack, int n) {
+        Stack<Integer> tempStack = new Stack<>();
+        Stack<Integer> revAndComp = new Stack<>();
+        while (stack.size() != n)
+            tempStack.push(stack.pop());
+
+        // reverse temp stack
+
+        while (!tempStack.isEmpty())
+            revAndComp.push(tempStack.pop());
+
+        // set up elements you want shifted to top
+
+        while (!stack.isEmpty())
+            tempStack.push(stack.pop());
+
+        // reverse top part
+        while (!tempStack.isEmpty())
+            revAndComp.push(tempStack.pop());
+
+        return revAndComp;
+
     }
 }
