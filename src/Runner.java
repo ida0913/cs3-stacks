@@ -5,6 +5,7 @@ public class Runner {
         StackProbs methods = new StackProbs();
         System.out.println(methods.doubleUp(makeStack(new int[] { 1, 3, 5, 0, -1 })));
 
+        System.out.println(methods.posAndNeg(makeStack(new int[] { 2, 9, -4, 3, -1, 0, -6 })));
     }
 
     public static Stack<Integer> makeStack(int[] arr) {
