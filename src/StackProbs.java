@@ -56,4 +56,35 @@ public class StackProbs {
         return revAndComp;
 
     }
+
+    public String reverseVowels(String str) {
+        Stack<Character> vowels = new Stack<>();
+        Stack<Character> string = new Stack<>();
+        String s = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (isVowel(str.charAt(i))) {
+                vowels.push(str.charAt(i));
+            }
+            string.push(str.charAt(i));
+        }
+
+        // reverse string stack
+        Stack<Character> temp = new Stack<>();
+        while (!string.isEmpty())
+            temp.push(string.pop());
+
+        while (!temp.isEmpty()) {
+            if (isVowel(temp.peek())) {
+                s += vowels.pop();
+                temp.pop();
+            } else {
+                s += temp.pop();
+            }
+        }
+        return s;
+    }
+
+    private boolean isVowel(Character ch) {
+        return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') ? true : false;
+    }
 }
