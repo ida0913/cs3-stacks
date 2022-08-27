@@ -87,4 +87,23 @@ public class StackProbs {
     private boolean isVowel(Character ch) {
         return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') ? true : false;
     }
+
+
+    public boolean bracketBalance(String s){
+        //VALID PARENTHESIS!!!! LEETCODE QUESTION!!! I KNOW THIS ONE!!!
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i<s.length(); i++){
+            if(s.charAt(i) == '(' || s.charAt(i) == '['){
+                stack.push(s.charAt(i));
+            } else if(
+                !stack.isEmpty() &&
+                s.charAt(i) == ')' && stack.peek() == '('||
+                s.charAt(i) == ']' && stack.peek() == '['
+            ){
+                stack.pop();
+            } else return false;
+        }
+        return stack.isEmpty();
+    }
+
 }
