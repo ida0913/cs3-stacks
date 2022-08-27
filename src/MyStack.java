@@ -33,13 +33,13 @@ public class MyStack {
     public String toString() {
         size = this.getSize();
         String string = "";
-        for(int i = 0; i<size; i++){
-            if(string.length() == 0){
+        for (int i = 0; i < size; i++) {
+            if (string.length() == 0) {
                 string += String.valueOf(stack[i]) + "      <----- TOP \n";
             }
-                string += String.valueOf(stack[i]) + "\n";
+            string += String.valueOf(stack[i]) + "\n";
         }
-        
+
         return string + "\n--------";
     }
 
