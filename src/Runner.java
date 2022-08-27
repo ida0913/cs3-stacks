@@ -2,7 +2,9 @@ import java.util.Stack;
 
 public class Runner {
     public static void main(String[] args) {
-        makeStack(new int[] { 1, 3, 5, 0, -1 });
+        StackProbs methods = new StackProbs();
+        System.out.println(methods.doubleUp(makeStack(new int[] { 1, 3, 5, 0, -1 })));
+
     }
 
     public static Stack<Integer> makeStack(int[] arr) {
