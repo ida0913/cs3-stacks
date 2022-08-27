@@ -14,6 +14,22 @@ public class StackProbs {
         while (!temp1.isEmpty()) {
             temp2.push(temp1.pop());
         }
-return temp2; 
+        return temp2;
+    }
+
+    public Stack<Integer> posAndNeg(Stack<Integer> stack) {
+        Stack<Integer> positive = new Stack<>();
+        Stack<Integer> negative = new Stack<>();
+
+        while (!stack.isEmpty()) {
+            if (stack.peek() < 0)
+                negative.push(stack.pop());
+            else
+                positive.push(stack.pop());
+        }
+        while(!positive.isEmpty()){
+            negative.push(positive.pop());
+        }
+    return negative;
     }
 }
