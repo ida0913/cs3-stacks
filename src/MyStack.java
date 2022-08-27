@@ -15,6 +15,10 @@ public class MyStack {
         size = this.getSize();
     }
 
+    public Integer[] getStack() {
+        return stack;
+    }
+
     public int getSize() {
         size = 0;
         for (int i = 0; i < stack.length; i++) {
@@ -23,6 +27,20 @@ public class MyStack {
             }
         }
         return size;
+    }
+
+    @Override
+    public String toString() {
+        size = this.getSize();
+        String string = "";
+        for(int i = 0; i<size; i++){
+            if(string.length() == 0){
+                string += String.valueOf(stack[i]) + "      <----- TOP \n";
+            }
+                string += String.valueOf(stack[i]) + "\n";
+        }
+        
+        return string + "\n--------";
     }
 
     public boolean isEmpty() {
@@ -50,9 +68,7 @@ public class MyStack {
     public void push(int num) {
         if (size == stack.length)
             doubleCapacity();
-
-        stack[size - 1] = num;
-
+        stack[size] = num;
         size = this.getSize();
     }
 
